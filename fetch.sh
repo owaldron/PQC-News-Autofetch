@@ -16,7 +16,9 @@
 #   ./fetch.sh --backfill   # no recency limit — bulk-populate an empty backlog
 #
 # Env:
-#   MODEL=opus ./fetch.sh   # override the claude model (default: CLI default)
+#   MODEL=opus ./fetch.sh      # override the claude model (default: CLI default)
+#   MAX_QUERIES=30 ./fetch.sh  # cap web searches/fetches per run
+#                              # (default 24; 60 for --backfill)
 
 set -euo pipefail
 
@@ -27,10 +29,12 @@ cd "$SCRIPT_DIR"
 # --- args --------------------------------------------------------------------
 DAYS=14
 WINDOW_DESC="published within the last 14 days"
+QUERY_BUDGET_DEFAULT=24
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --backfill)
       WINDOW_DESC="from any date since NIST's additional-signatures call began (2022 onward) — this is an initial backfill to populate the backlog"
+      QUERY_BUDGET_DEFAULT=60
       shift ;;
     --days)
       DAYS="${2:?--days needs a number}"
@@ -42,6 +46,9 @@ while [[ $# -gt 0 ]]; do
       echo "Unknown option: $1" >&2; exit 1 ;;
   esac
 done
+
+# Cap on total web searches/fetches per run, so keyword-targeting stays bounded.
+QUERY_BUDGET="${MAX_QUERIES:-$QUERY_BUDGET_DEFAULT}"
 
 # --- preconditions -----------------------------------------------------------
 command -v claude >/dev/null 2>&1 || { echo "error: claude CLI not found in PATH" >&2; exit 1; }
@@ -78,10 +85,30 @@ Using only the allowed tools:
    press, academic venues).
 3. Read ${INDEX} — the cache of articles ALREADY summarized on previous runs. You
    MUST NOT include any article whose link already appears there.
-4. Search the web for articles ${WINDOW_DESC} that are genuinely relevant to the
-   NIST additional-signatures standardization process (candidate schemes, round
-   updates, evaluations, cryptanalysis, official NIST announcements, expert
-   analysis). Exclude anything already in ${INDEX}.
+4. Search with TARGETED, KEYWORD-SCOPED queries — do NOT fetch large index or
+   archive front pages and scan them whole (that wastes tokens and misses older
+   items). Build each query from two parts:
+     a. a candidate scheme name from the "Individual Algorithms" list in
+        sources.md (e.g. FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign,
+        UOV), and
+     b. a process keyword such as: NIST, standardization, "round 2", on-ramp,
+        cryptanalysis, attack, forgery, break, parameters, security proof.
+   Scope queries to the large high-priority sources instead of fetching them
+   whole:
+     - IACR ePrint: use its search endpoint, e.g.
+       https://eprint.iacr.org/search?q=<scheme>%20<keyword>, or
+       "site:eprint.iacr.org <scheme> <keyword>".
+     - pqc-forum: "site:groups.google.com/a/list.nist.gov/g/pqc-forum <scheme>".
+     - NIST CSRC: "site:csrc.nist.gov <scheme> additional signatures".
+   Each per-scheme homepage under "Individual Algorithms" is small — you may fetch
+   its News/Publications page directly.
+   Keep only results ${WINDOW_DESC} that are genuinely relevant to the NIST
+   additional-signatures standardization process, and exclude anything whose link
+   already appears in ${INDEX}.
+   BUDGET: perform at most ${QUERY_BUDGET} web searches/fetches total this run.
+   Spend them on the highest-value scheme+keyword combinations first (prioritize
+   High-priority sources and active/contested schemes) and stop once the budget
+   is reached.
 5. Rank the remaining NEW articles by relevance and keep the most essential ones
    (aim for the top ~8; fewer is fine if little is new; for a backfill you may
    include more). Assign each a relevance score.
