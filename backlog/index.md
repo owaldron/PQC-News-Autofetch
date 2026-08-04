@@ -18,3 +18,8 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-07-21] New Security Analysis for UOV-based Signature Candidates — https://csrc.nist.gov/csrc/media/Events/2024/fifth-pqc-standardization-conference/documents/papers/new-security-analysis-for-uov.pdf
 - [2026-07-21] Hash Your Keys before Signing: BUFF Security of the Additional NIST PQC Signatures — https://eprint.iacr.org/2024/591
 - [2026-07-21] Navigating Round 2 of NIST's Call for Additional PQ Signature Schemes — https://pqshield.com/navigating-round-2-of-nists-call-for-additional-pq-signature-schemes/
+- [2026-08-04] Claude AI Cracks HAWK Post-Quantum Signature; Authors Withdraw from NIST Process — https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html
+- [2026-08-04] Dimension Reduction for SVP in Hawk: A Trace-Zero Approach — https://eprint.iacr.org/2026/1560
+- [2026-08-04] MQ on my Hardware: Performance Analysis of MQOM on FPGA — https://eprint.iacr.org/2026/1483
+- [2026-08-04] A High-Speed Hardware Accelerator for QR-UOV Signature Scheme — https://eprint.iacr.org/2026/1458
+- [2026-08-04] SM4th and uBlockith: VOLE-based Post-Quantum Signature Schemes from Chinese Block Ciphers — https://eprint.iacr.org/2026/1506
