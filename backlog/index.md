@@ -23,3 +23,6 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-08-04] MQ on my Hardware: Performance Analysis of MQOM on FPGA — https://eprint.iacr.org/2026/1483
 - [2026-08-04] A High-Speed Hardware Accelerator for QR-UOV Signature Scheme — https://eprint.iacr.org/2026/1458
 - [2026-08-04] SM4th and uBlockith: VOLE-based Post-Quantum Signature Schemes from Chinese Block Ciphers — https://eprint.iacr.org/2026/1506
+- [2026-08-09] Extending the Applicability of Algebraic Key Recovery Attacks on the UOV Signature Scheme — https://eprint.iacr.org/2026/1620
+- [2026-08-09] AES-Based Grinding for MPC-in-the-Head Signatures — https://eprint.iacr.org/2026/1625
+- [2026-08-09] AI Just Broke a Post-Quantum Signature Scheme Candidate — Here Is What That Means for Your Migration — https://www.exequantum.com/insights/ai-just-broke-a-post-quantum-signature-scheme-candidate.-here-is-what-that-means-for-your-migration
