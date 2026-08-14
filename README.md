@@ -4,6 +4,8 @@ Agent-guided search and summary of articles on **NIST's ongoing standardization
 of additional post-quantum digital signature schemes** (the "on-ramp" / second
 call for signatures).
 
+📰 **Read the digests: <https://owaldron.github.io/PQC-News-Autofetch/>**
+
 [fetch.sh](fetch.sh) drives the `claude` CLI headlessly to web-search for
 relevant articles, then writes a dated digest to `backlog/`. A running index of
 everything already summarized keeps each run focused on **new** articles only.
@@ -62,6 +64,25 @@ the script does **not** bypass permissions.
 | `sources.md`            | Tracked schemes + preferred sources (edit to tune results). |
 | `backlog/<date>.md`     | A dated digest — the output you read.                       |
 | `backlog/index.md`      | Dedup cache of every article already summarized.            |
+| `site/build.py`         | Renders `backlog/` into the static site (see below).        |
+
+## Website
+
+Every push to `main` that touches `backlog/` or `site/` rebuilds
+<https://owaldron.github.io/PQC-News-Autofetch/> via
+[.github/workflows/pages.yml](.github/workflows/pages.yml): a home page listing
+the digests, one page per digest, and an "All articles" archive built from
+`backlog/index.md`. The markdown files themselves are never modified.
+
+Preview locally:
+
+```bash
+pip install markdown-it-py linkify-it-py
+python site/build.py                  # writes ./_site (gitignored)
+python -m http.server -d _site 8000   # then open http://localhost:8000
+```
+
+Styling lives in [site/style.css](site/style.css).
 
 ## Customizing
 
