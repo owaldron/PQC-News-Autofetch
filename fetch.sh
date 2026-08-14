@@ -4,7 +4,7 @@
 # standardization of ADDITIONAL post-quantum digital signature schemes.
 #
 # Drives the `claude` CLI headlessly to:
-#   1. read intructions.md (output template) and sources.md (preferred sources)
+#   1. read instructions.md (output template) and sources.md (preferred sources)
 #   2. read backlog/index.md (cache of already-summarized articles)
 #   3. search the web for NEW, relevant articles
 #   4. write a dated digest to backlog/<YYYY-MM-DD>.md
@@ -77,8 +77,9 @@ CRYSTALS-Dilithium / FALCON / SPHINCS+ selections).
 
 Using only the allowed tools:
 
-1. Read intructions.md — it defines the output TEMPLATE (fields each entry must
-   capture: relevance score, title, date, authors, summary, link).
+1. Read instructions.md — it defines the output TEMPLATE: the required SYNOPSIS
+   paragraph that opens each digest, and the fields each entry must capture
+   (relevance score, title, date, authors, summary, link).
 2. Read sources.md — treat "High-priority sources" as preferred/authoritative and
    weight them higher. If it is empty, use reputable sources of your own judgment
    (NIST CSRC PQC pages, the pqc-forum mailing list, IACR ePrint, major security
@@ -112,9 +113,15 @@ Using only the allowed tools:
 5. Rank the remaining NEW articles by relevance and keep the most essential ones
    (aim for the top ~8; fewer is fine if little is new; for a backfill you may
    include more). Assign each a relevance score.
-6. Write the digest to ${OUTPUT}, following the template in intructions.md, under
-   a "# NIST PQC Signatures — ${DATE}" heading. If nothing new is relevant, still
-   create ${OUTPUT} noting that none were found.
+6. Write the digest to ${OUTPUT}, following the template in instructions.md, under
+   a "# NIST PQC Signatures — ${DATE}" heading. Immediately after that heading,
+   before the first article, write the required SYNOPSIS: one paragraph of 2-4
+   sentences on the period as a whole — what changed in the standardization
+   process, the dominant theme of these articles, and the shape of the rest. It
+   is used as the digest's blurb on the website index, so it must read on its
+   own. Base it only on the articles you actually included. If nothing new is
+   relevant, still create ${OUTPUT} with a synopsis saying the period was quiet
+   and none were found.
 7. Append each included article to ${INDEX} as a new line:
    "- [${DATE}] <title> — <url>". Do not remove or reorder existing lines.
 

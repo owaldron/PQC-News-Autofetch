@@ -41,8 +41,9 @@ pick up what's new.
 
 Each run, the agent:
 
-1. Reads [intructions.md](intructions.md) — the output template (relevance score,
-   title, date, authors, summary, link).
+1. Reads [instructions.md](instructions.md) — the output template: the synopsis
+   paragraph that opens each digest, plus the per-article fields (relevance
+   score, title, date, authors, summary, link).
 2. Reads [sources.md](sources.md) — preferred sources and the tracked candidate
    schemes; High-priority sources are weighted higher.
 3. Reads `backlog/index.md` — the cache of already-summarized articles.
@@ -60,7 +61,7 @@ the script does **not** bypass permissions.
 | Path                    | Role                                                       |
 |-------------------------|------------------------------------------------------------|
 | `fetch.sh`              | The runner.                                                 |
-| `intructions.md`        | Output template / scoring guide (edit to change format).    |
+| `instructions.md`       | Output template / scoring guide (edit to change format).    |
 | `sources.md`            | Tracked schemes + preferred sources (edit to tune results). |
 | `backlog/<date>.md`     | A dated digest — the output you read.                       |
 | `backlog/index.md`      | Dedup cache of every article already summarized.            |
@@ -88,7 +89,7 @@ Styling lives in [site/style.css](site/style.css).
 
 - **Add or drop sources / schemes:** edit [sources.md](sources.md). New scheme
   names flow into the keyword queries automatically.
-- **Change the digest format or scoring:** edit [intructions.md](intructions.md).
+- **Change the digest format or scoring:** edit [instructions.md](instructions.md).
 - **Force a re-summary of an article:** remove its line from `backlog/index.md`.
 
 ## Scheduling (optional)

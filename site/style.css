@@ -24,7 +24,8 @@ body {
   max-width: 44rem;
   background: var(--bg);
   color: var(--fg);
-  font: 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Lato is loaded from Google Fonts in the page <head>; the rest is fallback. */
+  font: 1rem/1.65 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-wrap: anywhere;
 }
 
@@ -41,7 +42,8 @@ header {
   border-bottom: 1px solid var(--rule);
 }
 
-.brand { font-weight: 600; color: var(--fg); text-decoration: none; }
+/* Lato ships 400 and 700 only — asking for 600 would get a synthesized weight. */
+.brand { font-weight: 700; color: var(--fg); text-decoration: none; }
 nav { color: var(--muted); font-size: 0.9rem; }
 
 h1 { margin: 2rem 0 0.5rem; font-size: 1.5rem; line-height: 1.3; }
@@ -65,7 +67,7 @@ h3 {
   border-top: 1px solid var(--rule);
 }
 
-.digest-date { font-weight: 600; text-decoration: none; }
+.digest-date { font-weight: 700; text-decoration: none; }
 .digest-date:hover { text-decoration: underline; }
 .count { color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
 
