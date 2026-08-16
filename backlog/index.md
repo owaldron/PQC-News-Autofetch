@@ -26,3 +26,8 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-08-09] Extending the Applicability of Algebraic Key Recovery Attacks on the UOV Signature Scheme — https://eprint.iacr.org/2026/1620
 - [2026-08-09] AES-Based Grinding for MPC-in-the-Head Signatures — https://eprint.iacr.org/2026/1625
 - [2026-08-09] AI Just Broke a Post-Quantum Signature Scheme Candidate — Here Is What That Means for Your Migration — https://www.exequantum.com/insights/ai-just-broke-a-post-quantum-signature-scheme-candidate.-here-is-what-that-means-for-your-migration
+- [2026-08-16] Passive Full-Key Recovery for the MQOM v2 Lineage from Saltless Root Expansion — https://eprint.iacr.org/2026/1542
+- [2026-08-16] HAWK-n Key Recovery Reduces to SVP in Dimension n/2 + 1 — https://eprint.iacr.org/2026/1593
+- [2026-08-16] Qlapoty: Improved Analysis and Efficiency for Quaternionic Ideal to Isogeny Transformation — https://eprint.iacr.org/2026/1700
+- [2026-08-16] Qlapoti+ and More: Optimizing Isogeny-based Signatures — https://eprint.iacr.org/2026/1640
+- [2026-08-16] MAYO Lite: a Low-RAM Implementation of the MAYO Signature Scheme — https://eprint.iacr.org/2026/1634
