@@ -31,3 +31,6 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-08-16] Qlapoty: Improved Analysis and Efficiency for Quaternionic Ideal to Isogeny Transformation — https://eprint.iacr.org/2026/1700
 - [2026-08-16] Qlapoti+ and More: Optimizing Isogeny-based Signatures — https://eprint.iacr.org/2026/1640
 - [2026-08-16] MAYO Lite: a Low-RAM Implementation of the MAYO Signature Scheme — https://eprint.iacr.org/2026/1634
+- [2026-09-07] The Extended Wedge Attack — https://eprint.iacr.org/2026/1830
+- [2026-09-07] A Note on the Security Proof of SQIsign — https://eprint.iacr.org/2026/1775
+- [2026-09-07] A Decrementally-Improved Algorithm for Boolean MQ — https://eprint.iacr.org/2026/1704
