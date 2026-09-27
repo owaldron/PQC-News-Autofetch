@@ -34,3 +34,14 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-09-07] The Extended Wedge Attack — https://eprint.iacr.org/2026/1830
 - [2026-09-07] A Note on the Security Proof of SQIsign — https://eprint.iacr.org/2026/1775
 - [2026-09-07] A Decrementally-Improved Algorithm for Boolean MQ — https://eprint.iacr.org/2026/1704
+- [2026-09-27] Attacking UOV-based Signatures with Schur–Macaulay Matrices — https://eprint.iacr.org/2026/2181
+- [2026-09-27] Recovering SNOVA Secret Keys from Biased Vinegar Sampling — https://eprint.iacr.org/2026/2154
+- [2026-09-27] Round-3 spec and implementation round-up (nist-sigs-zoo PR #56) — https://github.com/PQShield/nist-sigs-zoo/pull/56
+- [2026-09-27] SQIsign: Algorithm Specifications and Supporting Documentation, Version 3.0 — https://sqisign.org/spec/sqisign-20260901.pdf
+- [2026-09-27] Complexity Analysis and Security Implications of the New Isogeny-Path Algorithm — https://eprint.iacr.org/2026/1821
+- [2026-09-27] Dimension-4 SQIsign at Round-3 Parameters: Sizes and Costs of the Compact Format — https://eprint.iacr.org/2026/2221
+- [2026-09-27] Cross-Signature Signing-Key Recovery and Domain-Separation Repair for SDitH v2 — https://eprint.iacr.org/2026/1808
+- [2026-09-27] New algorithms for quaternion ideals in SQIsign — https://eprint.iacr.org/2026/2153
+- [2026-09-27] Improved Complexity Estimates for Underdetermined MQ Systems via Generalized Variable Partitioning — https://eprint.iacr.org/2026/1054
+- [2026-09-27] A New Prime-Norm Ideal Sampling for SQIsign — https://eprint.iacr.org/2026/2172
+- [2026-09-27] HyperSolver: Asymptotically and Concretely Accelerating the Delfs–Galbraith Attack using Isogeny Ladders — https://eprint.iacr.org/2026/1823
