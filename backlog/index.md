@@ -45,3 +45,10 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-09-27] Improved Complexity Estimates for Underdetermined MQ Systems via Generalized Variable Partitioning — https://eprint.iacr.org/2026/1054
 - [2026-09-27] A New Prime-Norm Ideal Sampling for SQIsign — https://eprint.iacr.org/2026/2172
 - [2026-09-27] HyperSolver: Asymptotically and Concretely Accelerating the Delfs–Galbraith Attack using Isogeny Ladders — https://eprint.iacr.org/2026/1823
+- [2026-10-04] Geometric Forgeries: Structural Cryptanalysis of MAYO — https://eprint.iacr.org/2026/2247
+- [2026-10-04] Attacking UOV-based Signatures over divided power algebras — https://eprint.iacr.org/2026/2272
+- [2026-10-04] ECLIPSE: Strongly Unforgeable Isogeny Signatures from the Prime-Degree Variant of PRISM — https://eprint.iacr.org/2026/2312
+- [2026-10-04] Kettle: Short Post-Quantum Threshold Signatures from the HAWK Signature Scheme — https://eprint.iacr.org/2026/2288
+- [2026-10-04] Filtered Supersingular Isogeny Counts and Exact-Coset Response Existence — https://eprint.iacr.org/2026/1974
+- [2026-10-04] Lynx: Symmetric Primitive for Shorter and Faster VOLE-in-the-Head Signatures — https://eprint.iacr.org/2026/1099
+- [2026-10-04] Breaking the Spell: Cryptanalysis of VDOO — https://eprint.iacr.org/2026/2178
