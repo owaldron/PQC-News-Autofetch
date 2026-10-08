@@ -1,18 +1,40 @@
 :root {
   --bg: #fdfdfc;
+  --surface: #ffffff;
   --fg: #1c1b19;
+  /* Headlines use --fg; running prose uses --body, a notch softer, so a wall
+     of summaries doesn't read as one undifferentiated block. */
+  --body: #343229;
   --muted: #6b6862;
   --rule: #e2e0db;
+  --rule-soft: #eeece7;
   --link: #1a4f8a;
+  --score-high-fg: #10614a;
+  --score-high-bg: #dff1e8;
+  --score-mid-fg: #7a5410;
+  --score-mid-bg: #f6ecd8;
+  --score-low-fg: #5a5751;
+  --score-low-bg: #eceae5;
+  --shadow: 0 1px 2px rgba(28, 27, 25, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #16161a;
-    --fg: #e6e4e0;
-    --muted: #9a968e;
-    --rule: #302f33;
-    --link: #86b3e6;
+    --surface: #1d1d22;
+    --fg: #f1efeb;
+    --body: #c6c3bd;
+    --muted: #908c85;
+    --rule: #2f2e35;
+    --rule-soft: #26252b;
+    --link: #8fbcea;
+    --score-high-fg: #85d6ab;
+    --score-high-bg: rgba(133, 214, 171, 0.12);
+    --score-mid-fg: #e0b870;
+    --score-mid-bg: rgba(224, 184, 112, 0.12);
+    --score-low-fg: #a4a098;
+    --score-low-bg: rgba(164, 160, 152, 0.12);
+    --shadow: none;
   }
 }
 
@@ -21,12 +43,13 @@
 body {
   margin: 0 auto;
   padding: 2.5rem 1.25rem 4rem;
-  max-width: 44rem;
+  max-width: 46rem;
   background: var(--bg);
-  color: var(--fg);
+  color: var(--body);
   /* Lato is loaded from Google Fonts in the page <head>; the rest is fallback. */
   font: 1rem/1.65 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
 }
 
 a { color: var(--link); }
@@ -46,20 +69,115 @@ header {
 .brand { font-weight: 700; color: var(--fg); text-decoration: none; }
 nav { color: var(--muted); font-size: 0.9rem; }
 
-h1 { margin: 2rem 0 0.5rem; font-size: 1.5rem; line-height: 1.3; }
-h2 { margin: 2.25rem 0 0.5rem; font-size: 1.15rem; }
-
-h3 {
+h1 {
   margin: 2rem 0 0.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--rule);
-  font-size: 1.05rem;
-  line-height: 1.4;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--fg);
 }
 
-.lede { color: var(--muted); margin: 0.35rem 0 0; }
+h2 { margin: 2.25rem 0 0.5rem; font-size: 1.15rem; color: var(--fg); }
 
-/* Home page: list of digests */
+.lede {
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  font-size: 1.02rem;
+  max-width: 38rem;
+}
+
+hr {
+  margin: 2rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* --- digest entries ------------------------------------------------------ */
+
+.entry {
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.4rem 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.entry-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  color: var(--fg);
+}
+
+.entry-name { flex: 1; }
+
+/* The [n/10] relevance score, pulled out of the headline into a badge. */
+.score {
+  flex: none;
+  padding: 0.12rem 0.45rem;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: var(--score-low-fg);
+  background: var(--score-low-bg);
+}
+
+.score-max { font-weight: 400; opacity: 0.7; }
+.score-high { color: var(--score-high-fg); background: var(--score-high-bg); }
+.score-mid { color: var(--score-mid-fg); background: var(--score-mid-bg); }
+
+.fields { list-style: none; margin: 0; padding: 0; }
+
+/* Date / Authors / Link read as a label-value table; Summary gets its own
+   block below, since it is the part actually meant to be read. */
+.field {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  font-size: 0.93rem;
+}
+
+.field-name {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 1.9;
+}
+
+.field-value { color: var(--body); min-width: 0; }
+
+.field-summary {
+  display: block;
+  margin-top: 0.65rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.field-summary .field-name { display: block; line-height: 1.5; }
+
+.field-summary .field-value {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--body);
+}
+
+.field-link { align-items: baseline; }
+.field-link .field-value { font-size: 0.85rem; }
+
+/* --- home page: list of digests ------------------------------------------ */
+
 .digests { list-style: none; margin: 2rem 0 0; padding: 0; }
 
 .digest {
@@ -67,22 +185,16 @@ h3 {
   border-top: 1px solid var(--rule);
 }
 
-.digest-date { font-weight: 700; text-decoration: none; }
+.digest-date { font-weight: 700; text-decoration: none; font-size: 1.05rem; }
 .digest-date:hover { text-decoration: underline; }
 .count { color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+.digest .lede { font-size: 0.95rem; }
 
-/* Digest entries: the Date / Authors / Summary / Link bullets */
-main h3 + ul {
-  list-style: none;
-  margin: 0.5rem 0 0;
-  padding: 0;
-}
+/* --- all-articles page --------------------------------------------------- */
 
-main h3 + ul li { margin: 0.35rem 0; }
-
-/* All-articles page */
+.capture h2 { color: var(--muted); font-size: 0.95rem; letter-spacing: 0.03em; }
 .capture ul { padding-left: 1.1rem; }
-.capture li { margin: 0.3rem 0; }
+.capture li { margin: 0.45rem 0; line-height: 1.5; }
 
 footer {
   margin-top: 3.5rem;
@@ -90,4 +202,11 @@ footer {
   border-top: 1px solid var(--rule);
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+@media (max-width: 34rem) {
+  body { padding: 1.75rem 0.9rem 3rem; }
+  .entry { padding: 1.1rem 1rem 1.2rem; }
+  .field { grid-template-columns: 1fr; gap: 0; }
+  .field-name { line-height: 1.6; }
 }

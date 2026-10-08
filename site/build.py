@@ -83,6 +83,66 @@ def strip_inline_markup(text: str) -> str:
     return text.strip()
 
 
+# --- digest entry markup -----------------------------------------------------
+
+# Rendered entries are uniform: an `<h3>` headline followed by the four
+# `**Label:** value` bullets. Re-tagging them here (rather than restyling bare
+# `<li>`s) is what lets the stylesheet treat a headline, a field label, and a
+# summary as three different kinds of text.
+ENTRY = re.compile(
+    r"<h3>(?P<head>.*?)</h3>\s*<ul>\s*(?P<items>.*?)\s*</ul>", re.DOTALL
+)
+SCORE = re.compile(r"^\[(\d+)\s*/\s*10\]\s*(.*)$", re.DOTALL)
+FIELD = re.compile(r"<li><strong>(?P<name>[^<]*?):</strong>\s*(?P<value>.*?)</li>", re.DOTALL)
+
+
+def score_tier(score: int) -> str:
+    """Three bands, so the badge colour carries meaning at a glance."""
+    if score >= 9:
+        return "high"
+    if score >= 7:
+        return "mid"
+    return "low"
+
+
+def decorate_head(head: str) -> str:
+    m = SCORE.match(head.strip())
+    if not m:
+        return f"<h3 class=\"entry-title\">{head}</h3>"
+    score, title = int(m.group(1)), m.group(2).strip()
+    return (
+        '<h3 class="entry-title">'
+        f'<span class="score score-{score_tier(score)}">{score}'
+        '<span class="score-max">/10</span></span>'
+        f'<span class="entry-name">{title}</span></h3>'
+    )
+
+
+def decorate_field(m: re.Match[str]) -> str:
+    name = m.group("name").strip()
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "field"
+    return (
+        f'<li class="field field-{slug}">'
+        f'<span class="field-name">{name}</span>'
+        f'<span class="field-value">{m.group("value").strip()}</span></li>'
+    )
+
+
+def decorate_entries(body: str) -> str:
+    """Wrap each `### entry` + its bullets into a self-contained card."""
+
+    def one(m: re.Match[str]) -> str:
+        items = FIELD.sub(decorate_field, m.group("items"))
+        return (
+            '<article class="entry">\n'
+            f"{decorate_head(m.group('head'))}\n"
+            f'<ul class="fields">\n{items}\n</ul>\n'
+            "</article>"
+        )
+
+    return ENTRY.sub(one, body)
+
+
 # --- page template -----------------------------------------------------------
 
 
@@ -133,7 +193,7 @@ class Digest:
         self.title = title or self.date
         self.lede = strip_inline_markup(first_paragraph(rest))
         self.count = len(re.findall(r"(?m)^###\s", rest))
-        self.body = md.render(rest)
+        self.body = decorate_entries(md.render(rest))
 
     @property
     def href(self) -> str:
