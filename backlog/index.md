@@ -52,3 +52,13 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-10-04] Filtered Supersingular Isogeny Counts and Exact-Coset Response Existence — https://eprint.iacr.org/2026/1974
 - [2026-10-04] Lynx: Symmetric Primitive for Shorter and Faster VOLE-in-the-Head Signatures — https://eprint.iacr.org/2026/1099
 - [2026-10-04] Breaking the Spell: Cryptanalysis of VDOO — https://eprint.iacr.org/2026/2178
+- [2026-10-17] Power Analysis on SQIsign via Ideal Reconstruction from Quaternion Leakages — https://eprint.iacr.org/2026/2508
+- [2026-10-17] Extending the Schur–Macaulay Framework for UOV Attacks via Truncated Polynomial Algebras — https://eprint.iacr.org/2026/2444
+- [2026-10-17] Genericity in Multivariate Cryptography — https://eprint.iacr.org/2026/2452
+- [2026-10-17] Optimized NEON Implementation of MAYO on Apple M1 — https://eprint.iacr.org/2026/2350
+- [2026-10-17] The Lattice Isomorphism Problem with Hints — https://eprint.iacr.org/2026/2381
+- [2026-10-17] AVX-512 Acceleration of SQIsign 3.0 Verification — https://eprint.iacr.org/2026/2505
+- [2026-10-17] Efficient Vectorized Implementation of MQOM — https://eprint.iacr.org/2026/2439
+- [2026-10-17] FAEST on GPUs: Addressing Field Multiplication as a Bottleneck — https://eprint.iacr.org/2026/2489
+- [2026-10-17] GPU-Assisted FAEST v3 Signing: Challenge Grinding and CPU–GPU Pipelining — https://eprint.iacr.org/2026/2355
+- [2026-10-17] Practical Null-Branch Witness Attacks on In-the-Head Signatures — https://eprint.iacr.org/2026/2235
