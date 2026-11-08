@@ -62,3 +62,22 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-10-17] FAEST on GPUs: Addressing Field Multiplication as a Bottleneck — https://eprint.iacr.org/2026/2489
 - [2026-10-17] GPU-Assisted FAEST v3 Signing: Challenge Grinding and CPU–GPU Pipelining — https://eprint.iacr.org/2026/2355
 - [2026-10-17] Practical Null-Branch Witness Attacks on In-the-Head Signatures — https://eprint.iacr.org/2026/2235
+- [2026-11-08] HAWK-n Key Recovery Reduces to SVP in Dimension n/2 + 1 (pqc-forum thread, incl. HAWK withdrawal) — https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/2r2u6SbHun4
+- [2026-11-08] Announcement of the 3rd Round Onramp Candidates (pqc-forum) — https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/LXoTAe5AN78
+- [2026-11-08] The Supersingular Isogeny Problem in Time and Memory p^{1/3+o(1)} — https://eprint.iacr.org/2026/1486
+- [2026-11-08] Round 3 (Additional Signatures) OFFICIAL COMMENT: SDitH, MQOM — https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/gWeL5Oiim-s
+- [2026-11-08] Round 2 (Additional Signatures) OFFICIAL COMMENT: SNOVA — https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/z3v13roERpU
+- [2026-11-08] Pseudo-Oil Subspaces and the Geometry of Underdetermined MQ Problems — https://eprint.iacr.org/2026/1122
+- [2026-11-08] Key Recovery Attacks on UOV Using p^ℓ-truncated Polynomial Rings — https://eprint.iacr.org/2026/298
+- [2026-11-08] Syndrome Decoding out of the Head: Structure-Aided Side-Channel Witness Recovery on SDitH — https://eprint.iacr.org/2026/2760
+- [2026-11-08] Smoothness of Shortest Isogenies to Frobenius Conjugates — https://eprint.iacr.org/2026/2677
+- [2026-11-08] Just Guess: Improved (Quantum) Algorithm for the Underdetermined MQ Problem — https://eprint.iacr.org/2025/1788
+- [2026-11-08] Weak Keys Break the BUFF Security of HAWK — https://eprint.iacr.org/2026/1298
+- [2026-11-08] Improved Attacks for SNOVA by Exploiting Stability under a Group Action — https://eprint.iacr.org/2024/1770
+- [2026-11-08] Solving the Supersingular Isogeny Problem in Time p^{2/5+o(1)} Using Bivariate Multipoint Evaluation — https://eprint.iacr.org/2026/1575
+- [2026-11-08] NIST Advances Nine Post-Quantum Signature Algorithms to Third Round — https://thequantuminsider.com/2026/05/21/nist-advances-nine-post-quantum-signature-algorithms-to-third-round/
+- [2026-11-08] Shorter, Tighter, FAESTer: Optimizations and Improved (QROM) Analysis for VOLE-in-the-Head Signatures — https://eprint.iacr.org/2026/164
+- [2026-11-08] Revisiting the Wedge Attack on UOV Problem — https://eprint.iacr.org/2026/1548
+- [2026-11-08] Oil, Vinegar, and Sparks: Key Recovery from UOV via Single Electromagnetic Fault Injection — https://eprint.iacr.org/2026/154
+- [2026-11-08] Secret-Subspace Recovery in MAYO via Linearization of Errors from a Single Fault — https://eprint.iacr.org/2026/097
+- [2026-11-08] QR-UOV without Rejection Sampling: Security Analysis and High-Speed Implementation — https://eprint.iacr.org/2026/527
