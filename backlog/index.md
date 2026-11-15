@@ -81,3 +81,10 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-11-08] Oil, Vinegar, and Sparks: Key Recovery from UOV via Single Electromagnetic Fault Injection — https://eprint.iacr.org/2026/154
 - [2026-11-08] Secret-Subspace Recovery in MAYO via Linearization of Errors from a Single Fault — https://eprint.iacr.org/2026/097
 - [2026-11-08] QR-UOV without Rejection Sampling: Security Analysis and High-Speed Implementation — https://eprint.iacr.org/2026/527
+- [2026-11-15] Cryptanalysis of MinRank 2.0 — https://eprint.iacr.org/2026/2733
+- [2026-11-15] Vectorized (2, 2)-Isogenies in the Theta Model Using AVX-512 and Applications to SQIsign — https://eprint.iacr.org/2026/2773
+- [2026-11-15] SpreadMAYO: Unlocking Greater Parallelism for Faster MAYO Signatures on GPUs — https://eprint.iacr.org/2026/2705
+- [2026-11-15] An Improved Algorithm to Solve the Isogeny Problem in Dimension 2 with Precomputation — https://eprint.iacr.org/2026/2808
+- [2026-11-15] Revisiting Fiat-Shamir NIZKPs and Signatures from Seed-Friendly Sigma Protocols — https://eprint.iacr.org/2026/2858
+- [2026-11-15] An Improvement to the KLPT2 Algorithm — https://eprint.iacr.org/2026/2862
+- [2026-11-15] On the Security of the Cubic UOV Variant CML — https://eprint.iacr.org/2026/2872
