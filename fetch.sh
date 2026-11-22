@@ -29,7 +29,7 @@ cd "$SCRIPT_DIR"
 # --- args --------------------------------------------------------------------
 DAYS=14
 WINDOW_DESC="published within the last 14 days"
-QUERY_BUDGET_DEFAULT=24
+QUERY_BUDGET_DEFAULT=45
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --backfill)

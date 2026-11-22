@@ -88,3 +88,6 @@ article whose link appears here. Format: `- [YYYY-MM-DD captured] Title — URL`
 - [2026-11-15] Revisiting Fiat-Shamir NIZKPs and Signatures from Seed-Friendly Sigma Protocols — https://eprint.iacr.org/2026/2858
 - [2026-11-15] An Improvement to the KLPT2 Algorithm — https://eprint.iacr.org/2026/2862
 - [2026-11-15] On the Security of the Cubic UOV Variant CML — https://eprint.iacr.org/2026/2872
+- [2026-11-22] PQC 2026 Conference Programme — Status Report on the Additional Signature Schemes Initiative; SQIsign Updates; Cryptanalysis of Hawk — https://www.creachlabs.fr/en/conferences-scientific-meetings-high-stakes/pqc-2026-post-quantum-cryptography-conference
+- [2026-11-22] Improving the Efficiency of 4-Dimensional SQIsign — https://eprint.iacr.org/2026/2906
+- [2026-11-22] A Single-Trace Side-Channel Attack on the KpqC Digital Signature Scheme AIMer v3 — https://eprint.iacr.org/2026/2859
